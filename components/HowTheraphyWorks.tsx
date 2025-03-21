@@ -4,30 +4,16 @@ import { JSX, use, useState } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
 import React from "react";
+import { Card } from "./Card";
 
-type CardProps = {
-  text: string;
-  children: JSX.Element[];
-};
-
-const Card = ({ text, children }: CardProps) => {
-  return (
-    <>
-      <div className="px-3 py-4 bg-blue-200 flex gap-6 items-center bg-white rounded-lg">
-        <div>{children}</div>
-        <div className="flex jusify-center w-full">
-          <h1 className="font-semibold text-center">{text}</h1>
-        </div>
-      </div>
-    </>
-  );
-};
 export const HowTheraphyWorks = () => {
   return (
     <>
       <div className="flex flex-col md:block w-full md:pl-20 md:pr-30 lg:pr-40 bg-rose-100 py-12 px-12">
-        <div >
-          <h1 className="text-3xl font-bold w-full">Cum functioneaza terapia?</h1>
+        <div>
+          <h1 className="text-3xl font-bold w-full">
+            Cum functioneaza terapia?
+          </h1>
         </div>
         <div className="flex flex-col md:flex-row md:justify-between gap-8">
           <div className="flex flex-col gap-8 mt-12 md:mt-20">
