@@ -89,25 +89,26 @@ export const Navbar = () => {
           </svg>
         </button>
       </nav>
-      {/* ideea este sa randez prima oara divul mare si apoi cand se randeaza sa 
-      ii dau un translate lui ala mic */}
       {display && (
         <div
           className={`
-          transition-all ease-in duration-500
+          transition-all ease-in duration-300
           flex top-0 md:hidden bg-black/50  w-full min-h-screen absolute `}
           onClick={(e) => {
             let burger = document.getElementById("burger");
             if (e.target != burger) {
-              setDisplay(false);
+              setAnimate(false);
+              setTimeout(() => {
+                setDisplay(false);
+              }, 300);
             }
           }}
         >
           {display && (
             <div
               id="burger"
-              className={`absolute -right-7/12 transform transition-transform ease-in-out duration-400 ${
-                animate ? "-translate-x-full" : " -translate-x-0 "
+              className={`absolute -right-7/12 transform transition-transform ease-in-out duration-500 ${
+                animate ? "-translate-x-full" : " translate-x-full "
               } w-7/12 bg-rose-100 flex flex-col items-start min-h-screen gap-4 px-4 pt-4`}
             >
               <h1 className="p-2 font-bold mb-4">Sorina Brif</h1>
