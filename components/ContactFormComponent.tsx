@@ -1,11 +1,22 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export const ContactFormComponent = () => {
+  const [nameValue, setNameValue] = useState("");
+  const [mail, setMailValue] = useState("");
+  const [mesajValue, setMesajValue] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNameValue(e.target.value);
+    console.log(nameValue);
+  };
+
   return (
     <>
-      <div className=" bg-rose-100 text-black">
+      <div className=" bg-rose-100 text-black px-20 md:px-0">
         <form action="" className="w-full">
           {/*  */}
           <div className="flex flex-col items-center md:items-start gap-10">
@@ -20,6 +31,8 @@ export const ContactFormComponent = () => {
                     type="text"
                     id="name"
                     placeholder="ex.Ion Popescu"
+                    value={nameValue}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="flex flex-col gap-4 ">
